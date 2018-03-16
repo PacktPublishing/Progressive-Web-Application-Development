@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Progressive web app course on PacktPub">
+  <!--Viewport tag which makes our website responsive-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>PacktPwaNote, PacktPub Progressive Web App Course</title>
+
+  <!-- Theme color for mobile users -->
+  <meta name="theme-color" content="#3f51b5">
+
+  <!-- Manifest.json-->
+  <link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <!--
+    Material design script
+    Sources:
+    1- getmdl.io
+  -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="/assets/css/libs/material.min.css">
+  <!--
+    Our Custom css if needed which has been done throught the course
+  -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title">PACKT PWA NOTE</span>
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+        <!-- Navigation. We hide it in small screens. -->
+        <nav class="mdl-navigation mdl-layout--large-screen-only">
+          <a class="mdl-navigation__link" href="/index.html">Notes</a>
+          <a class="mdl-navigation__link" href="/add.html">Add Note</a>
+        </nav>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">PACKT PWA NOTE</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="/index.html">Notes</a>
+        <a class="mdl-navigation__link" href="/add.html">Add Note</a>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+          Enable Notification
+        </button>
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+      <div class="page-content">
+        <!-- Your content goes here -->
+        <div class="mdl-grid" id="grid">
+
+          <!--
+            In order to have app-shell
+          -->
+          <!-- MDL Progress Bar with Indeterminate Progress -->
+          <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet" id="column">
+            <div class="mdl-card mdl-shadow--2dp" style="width:95%; margin:1rem">
+              <div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+            </div>
+          </div>
+
+          <noscript>
+            <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet" id="column">
+              <div class="mdl-card mdl-shadow--2dp" style="width:95%; margin:1rem">
+                <h3>Javascript is not enabled</h3>
+              </div>
+            </div>
+          </noscript>
+
+          <!--
+            Column START
+            Basically, NOTE_TEMPLE in main.js is similar to this snippet
+
+
+          <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet" id="column">
+
+            <div class="mdl-card mdl-shadow--2dp" style="width:95%; margin:1rem">
+              <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text">Auckland Sky Tower, Auckland, New Zealand</h2>
+              </div>
+              <div class="mdl-card__media mdl-color--cyan" style="padding:2px">
+              </div>
+              <div class="mdl-card__supporting-text">
+                The Sky Tower is an observation and telecommunications tower located in Auckland, New Zealand. It is
+                328 metres (1,076 ft) tall, making it the tallest man-made structure in the Southern
+                Hemisphere.
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-js-button mdl-button--colored mdl-color-text--cyan mdl-js-ripple-effect">
+                  Edit
+                </a>
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                  Delete
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          Column END -->
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!--
+    Show simple notification on the bottom of the page
+  -->
+  <div id="notification" class="mdl-js-snackbar mdl-snackbar mdl-color--amber">
+    <div class="mdl-snackbar__text mdl-color-text--black"></div>
+    <button class="mdl-snackbar__action" type="button"></button>
+  </div>
+
+  <!--
+    FAB button on the right bottom side of the page
+  -->
+  <a href="/add.html" id="fab" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--cyan">
+    <i class="material-icons">add</i>
+  </a>
+
+  <!--
+    Open Modal to make sure you want to delete a post!
+  -->
+  <dialog class="mdl-dialog">
+    <h4 class="mdl-dialog__title">Are you sure?</h4>
+    <div class="mdl-dialog__content">
+      <p>
+        If you delete this item, there is no way to restor it back,so, be careful!
+      </p>
+    </div>
+    <div class="mdl-dialog__actions">
+      <button type="button" class="mdl-button confirmDelete">Delete</button>
+      <button type="button" class="mdl-button close">Cancel</button>
+    </div>
+  </dialog>
+
+  <!--
+    Material design script
+    Sources:
+    1- getmdl.io
+  -->
+  <script src="/assets/js/libs/material.min.js"></script>
+  <script src="/assets/js/helpers.js"></script>
+  <script src="/assets/js/main.js"></script>
+
+  <script>
+    // Methods needed for index.html page
+    app.indexPage();
+
+  </script>
+</body>
+
+</html>

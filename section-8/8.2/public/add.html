@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--Viewport tag which makes our website responsive-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<title>PacktPwaNote, PacktPub Progressive Web App Course</title>
+
+<!--
+  Add to homescreen for Safari on iOS
+  Source: https://goo.gl/DggPNE
+-->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Packt PWA Note">
+<link rel="apple-touch-startup-image" href="/assets/images/icon-512x512.png">
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/images/icons/icon-57x57.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/images/icons/icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/images/icons/icon-114x114.png">
+<link rel="apple-touch-icon" sizes="167x167" href="/assets/images/icons/apple-icon-167x167.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/images/icons/icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/images/icons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-icon-180x180.png">
+<link rel="apple-touch-icon" sizes="192x192" href="/assets/images/icons/icon-192x192.png">
+<!--&zT",0o9hFho)m'#9F3([-->
+<!-- Tile icon for Win8 (144x144 + tile color) -->
+<meta name="msapplication-TileImage" content="/assets/images/icons/icon-144x144.png">
+<meta name="msapplication-TileColor" content="#3372DF">
+<meta name="msapplication-starturl" content="/">
+
+<!-- Theme color for mobile users -->
+<meta name="theme-color" content="#3f51b5">
+
+<!-- Manifest.json-->
+<link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <!--
+    Material design script
+    Sources:
+    1- getmdl.io
+  -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="/assets/css/libs/material.min.css">
+  <!--
+    Our Custom css if needed which has been done throught the course
+  -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title">PACKT PWA NOTE</span>
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+        <!-- Navigation. We hide it in small screens. -->
+        <nav class="mdl-navigation mdl-layout--large-screen-only">
+          <a class="mdl-navigation__link" href="/index.html">Notes</a>
+          <a class="mdl-navigation__link" href="/add.html">Add Note</a>
+        </nav>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">PACKT PWA NOTE</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="/index.html">Notes</a>
+        <a class="mdl-navigation__link" href="/add.html">Add Note</a>
+        <button class="notification-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+          Enable Notification
+        </button>
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+      <div class="page-content p-1rem mdl-typography--text-center">
+        <!-- Your content goes here -->
+        <h3 id="page-title"> Enter your note </h3>
+        <form name="addNote" method="post">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
+            <input class="mdl-textfield__input" type="text" name="title" id="title">
+            <label class="mdl-textfield__label" for="title">Title...</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
+            <textarea class="mdl-textfield__input" type="text" rows="8" id="note" name="note"></textarea>
+            <label class="mdl-textfield__label" for="note">Note lines...</label>
+          </div>
+
+          <div class="mdl-input__expandable-holder">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-textfield--full-width">
+              Save
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <!--
+    Show simple notification on the bottom of the page
+  -->
+  <div id="notification" class="mdl-js-snackbar mdl-snackbar mdl-color--amber">
+    <div class="mdl-snackbar__text mdl-color-text--black"></div>
+    <button class="mdl-snackbar__action" type="button"></button>
+  </div>
+
+  <!--
+      FAB button on the right bottom side of the page
+    -->
+  <a href="/index.html" id="fab" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--cyan">
+    <i class="material-icons">close</i>
+  </a>
+
+  <!--
+    Material design script
+    Sources:
+    1- getmdl.io
+  -->
+  <script src="/assets/js/libs/material.min.js"></script>
+  <script src="/assets/js/libs/promise.min.js"></script>
+  <script src="/assets/js/libs/idb.min.js"></script>
+  <script src="/assets/js/libs/fetch.min.js"></script>
+  <script src="/assets/js/helpers.js"></script>
+  <script src="/assets/js/db.js"></script>
+  <script src="/assets/js/firebase.js"></script>
+  <script src="/assets/js/main.js"></script>
+  <script>
+    // Methods needed for add.html page
+    app.addPage();
+
+  </script>
+</body>
+
+</html>
