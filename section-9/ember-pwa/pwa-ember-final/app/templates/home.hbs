@@ -1,0 +1,17 @@
+<div class="container">
+    <div style="text-align:center">
+      <h1>
+        Welcome to {{ model.title }}
+      </h1>
+      <img width="300" alt="Ember Logo" src="/assets/images/construction.png">
+    </div>
+    <div class="alert alert-success" role="alert">
+      <h4 class="alert-heading">Well done!</h4>
+      <p>Aww yeah, you successfully read this important alert message. This example text is going to run a
+        bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+      <hr>
+      <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+    </div>
+    {{#link-to "about" class="btn btn-primary"}}GO TO ABOUT{{/link-to}}
+  </div>
+{{outlet}}
