@@ -1,8 +1,3 @@
-## $5 Tech Unlocked 2021!
-[Buy and download this Video for only $5 on PacktPub.com](https://www.packtpub.com/product/progressive-web-application-development-video/9781787285958)
------
-*The $5 campaign         runs from __December 15th 2020__ to __January 13th 2021.__*
-
 # Progressive-Web-Application-Development
 Progressive Web Application Development, published by Packt
 # Progressive Web Application Development [Video]
